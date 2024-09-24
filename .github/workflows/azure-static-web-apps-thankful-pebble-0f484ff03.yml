@@ -42,4 +42,4 @@ jobs:
           action: "upload"
           app_location: "/" # Cartella di origine dell'app
           api_location: "" # Cartella API, se presente
-          output_location: "dist/pipeline/browser" # Percorso di output della build
+          output_location: "dist/pipeline" # Percorso di output della build
