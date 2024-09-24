@@ -32,7 +32,7 @@ jobs:
           npm install
 
       - name: Build the Angular app
-        run: ng build --prod
+        run: ng build --configuration production
 
       - name: Deploy to Azure Static Web App
         uses: Azure/static-web-apps-deploy@v1
