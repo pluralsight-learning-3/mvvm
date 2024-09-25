@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
@@ -9,5 +10,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'pipeline';
+  destinatario = '';
+  private url = "https://mvvm.azurewebsites.net/api/HttpTrigger1?code=ryjcl40cNXh43zJzmCiKOx5Cq9uSV4MxdZ4fpypf5nAMAzFu1dx6Gw%3D%3D";
+
+  public constructor(private readonly http: HttpClient){}
+
+  fuckOff() {
+    this.http.post(this.url, {name: "Domenico"} ).subscribe((res: any) => {
+      this.destinatario = res.res.toUpperCase();
+    })
+  }
 }
