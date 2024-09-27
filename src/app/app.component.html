@@ -1,5 +1,16 @@
 <h1>CHI MANDIAMO A FANCULO OGGI</h1>
+<div>
+    <input type="text" [(ngModel)]="persona" /> <button (click)="add()" style="display: inline-block;">Add</button>
+</div>
 
-<button (click)="fuckOff()">Click</button>
+<div>
+    @if (list.length > 0) {
+        {{list | json}}
+    }
+</div>
+
+<div>
+    <button (click)="fuckOff()">Manda</button>
+</div>
 
 <h2>{{destinatario}}</h2>
