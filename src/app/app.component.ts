@@ -18,6 +18,7 @@ export class AppComponent {
   public destinatario = '';
   private url = "https://mvvm-mvvm.azuremicroservices.io/api/persone"; //azure spring app 
   // private url = "https://mvvm.azurewebsites.net/api/HttpTrigger1?code=ryjcl40cNXh43zJzmCiKOx5Cq9uSV4MxdZ4fpypf5nAMAzFu1dx6Gw%3D%3D"; //azure function 
+  // private url = "http://localhost:8080/api/persone"
 
   public list: string[] = [];
 
@@ -26,11 +27,10 @@ export class AppComponent {
   add() {
     this.list.push(this.persona);
     this.persona = "";
-    
   }
 
   fuckOff() {
-    this.http.post(this.url, {data: ["Domenico", "Mancino"]} ).subscribe((res: any) => {
+    this.http.post(this.url, {data: this.list} ).subscribe((res: any) => {
       this.destinatario = res.data.toUpperCase();
     })
   }
